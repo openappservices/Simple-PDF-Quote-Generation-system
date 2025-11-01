@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  quotation-app:
+    build: .
+    container_name: quotation-generator
+    ports:
+      - "8080:5000"
+    volumes:
+      - ./app.py:/app/app.py
+    environment:
+      - FLASK_ENV=development
+    restart: unless-stopped
